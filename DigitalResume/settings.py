@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +24,7 @@ TEMPLATE_DIR=BASE_DIR / 'templates'
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-58=4731(*qhsop_sjiq)ez$lfm+d((i)-a4xvrb6ok2dzm24d%'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -117,8 +120,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
+STATICFILES_DIRS=[
+    BASE_DIR / 'static',
+    BASE_DIR / 'media',
+]
 STATIC_URL = 'static/'
-STATICFILES_DIRS=[BASE_DIR / 'static']
+STATIC_ROOT=BASE_DIR / 'staticfiles'
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=BASE_DIR / 'medialfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
