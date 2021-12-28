@@ -42,7 +42,7 @@ Start Content
         </div>
         <div class="col-md">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-3">Hi, I’m {{ me.first_name|title }}, <br> a {{me.userprofile.title}} </br></h1>
+            <h1 class="xlTitle pb-3">Hi, I’m {{me.first_name|title}}, <br> a {{me.userprofile.title}} </br></h1>
             <p>{{me.userprofile.bio}}</p>
             <div class="bannerBtnCol">
               <div class="row">
@@ -87,7 +87,7 @@ Start Content
           <div class="progressCol">
             <div class="progressCard">
               {% for sk in me.userprofile.skills.all %}
-              {% if sk.is_key_skill %}
+              {% if not sk.is_key_skill %}
               <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
                 <div class="row g-2 align-items-center">
@@ -135,7 +135,7 @@ Start Content
                   <li>{{c.date.date}}</li>
                   <li>{{c.name|title}}</li>
                 </ul>
-                <p>{{c.description}}</p>
+                {{ c.description|safe }}
               </div>
             </div>
             {% endif %}
