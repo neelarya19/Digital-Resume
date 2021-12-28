@@ -1,1 +1,1 @@
-web: gunicorn CryptoPrice.wsgi --log-file -
+web: gunicorn DigitalResume.wsgi --log-file -
