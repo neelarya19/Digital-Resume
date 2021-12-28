@@ -9,4 +9,4 @@ urlpatterns = [
 	path('contact/', views.ContactView.as_view(), name="contact"),
 	path('portfolio/', views.PortfolioView.as_view(), name="portfolios"),
 	path('portfolio/<slug:slug>', views.PortfolioDetailView.as_view(), name="portfolio"),
-	]
+]
