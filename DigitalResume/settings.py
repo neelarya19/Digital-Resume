@@ -145,7 +145,7 @@ MEDIA_ROOT=BASE_DIR / 'mediafiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CKEDITOR_BASEPATH = STATIC_ROOT+"ckeditor/ckeditor/"
+CKEDITOR_BASEPATH = "ckeditor/ckeditor/"
 
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
