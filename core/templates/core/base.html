@@ -43,6 +43,17 @@
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="https://unpkg.com/swiper@7.0.5/swiper-bundle.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".content-markdown").each(function(){
+                var content = $(this).text()
+                var markedContent = marked(content)
+                $(this).html(markedContent)
+        })
+      })
+    </script>
     {% block extend_footer %}{% endblock %}
     <!-- ================================
     End Scripts

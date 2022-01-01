@@ -48,7 +48,10 @@ Start Content
 <section>
   <div class="sectionSpaceSm">
     <div class="container">
-      {{object.body|safe}}
+
+      <div class="content-markdown">
+        {{ object.body }}
+      </div>
     </div>
   </div>
 </section>
