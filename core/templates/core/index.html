@@ -88,7 +88,7 @@ Start Content
             <div class="progressCard">
               {% for sk in me.userprofile.skills.all %}
               {% if not sk.is_key_skill %}
-              <div class="progressCol">
+              {% comment %} <div class="progressCol">
                 <span class="progressLbl">{{sk.name}}</span>
                 <div class="row g-2 align-items-center">
                   <div class="col">
@@ -100,7 +100,8 @@ Start Content
                     <span class="pLbl">{{sk.score}}%</span>
                   </div>
                 </div>
-              </div>
+              </div> {% endcomment %}
+              <span class="portfolio-skill-badge badge bg-light text-dark">{{ sk.name }}</span>
               {% endif %}
               {% endfor %}
               
@@ -187,7 +188,7 @@ Start Content
         {% endfor %}
         
       </div>
-      <div class="testimonialCol">
+      {% comment %} <div class="testimonialCol">
         <h4 class="smText regular d-block">Testimonials</h4>
         <div class="testimonialSlider">
           <div class="swiper testimonialSwiper">
@@ -221,7 +222,7 @@ Start Content
 
 
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
   </div>
 </section>
